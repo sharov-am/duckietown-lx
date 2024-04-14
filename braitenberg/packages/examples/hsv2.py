@@ -1,7 +1,7 @@
 import sys
 
 import cv2
-import duckietown_code_utils as dcu
+#import duckietown_code_utils as dcu
 import numpy as np
 
 
@@ -9,12 +9,16 @@ def nothing(x):
     pass
 
 
-
 def main(fname: str = None):
+    
     # Create a window
     cv2.namedWindow("image")
 
-    frame0 = dcu.image_cv_from_jpg_fn(fname or sys.argv[1])
+    #frame0 = dcu.image_cv_from_jpg_fn(fname or sys.argv[1])
+    # Please copy the "big-duck-08.jpg" to the same folder as this file
+    frame0 = cv2.imread("/home/sharov_am/duckietown/duckietown-lx/braitenberg/assets/samples/big-duck/big-duck-08.jpg")
+    frame0 = cv2.cvtColor(frame0, cv2.COLOR_BGR2HSV)
+    
     lastL = np.array([171, 140, 0])
     lastU = np.array([179, 200, 255])
 
@@ -58,7 +62,6 @@ def main(fname: str = None):
 
     # close windows
     cv2.destroyAllWindows()
-
 
 if __name__ == "__main__":
     main()
