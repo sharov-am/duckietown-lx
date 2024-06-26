@@ -67,6 +67,10 @@ Then clone your new repository, replacing your GitHub username in the command be
 
     git clone -b mooc2022 git@github.com:<your_username>/duckietown-lx
 
+Now, change directory to `duckietown-lx`
+
+    cd duckietown-lx
+
 ## Step 4 - Set up the remote
 
 Now we will configure the Duckietown version of this repository as the upstream repository to sync with your fork.
@@ -98,7 +102,7 @@ work to the [challenges server](https://challenges.duckietown.org/) to evaluate 
 # Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of a single exercise (e.g., the 
-`braitenberg` directory).
+`braitenberg` directory; you should run `cd braitenberg`).
 
 ## 1. Make sure your folder is up-to-date
 
