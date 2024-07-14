@@ -15,8 +15,9 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
     """
 
     # TODO: these are random values, you have to implement your own solution in here
-    ticks = prev_ticks + int(np.random.uniform(0, 10))
-    dphi = np.random.random()
+    #ticks = prev_ticks + int(np.random.uniform(0, 10))
+    ticks_delta = ticks - prev_ticks
+    dphi =  ticks_delta *  2 * np.pi / resolution  #np.random.random()
     # ---
     return dphi, ticks
 
@@ -50,9 +51,18 @@ def pose_estimation(
         theta_curr:              estimated heading
     """
 
-    # These are random values, replace with your own
-    x_curr = np.random.random()
-    y_curr = np.random.random()
-    theta_curr = np.random.random()
-    # ---
+    
+    d_left = R*delta_phi_left
+    d_right = R * delta_phi_right
+    d = (d_left + d_right)/2.0
+    delta_theta = (d_right - d_left)/(baseline)
+    
+    x_curr = x_prev + d * np.cos(theta_prev) 
+    y_curr = y_prev + d * np.sin(theta_prev)
+    theta_curr = theta_prev + delta_theta
+
+    # x_curr = x_prev + R*(delta_phi_left+delta_phi_right)*np.cos(theta_prev)/2
+    # y_curr = y_prev + R*(delta_phi_left+delta_phi_right)*np.sin(theta_prev)/2
+    # theta_curr = theta_prev + R*(delta_phi_right-delta_phi_left)/(baseline)
+
     return x_curr, y_curr, theta_curr

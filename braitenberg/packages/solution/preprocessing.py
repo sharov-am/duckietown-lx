@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-lower_hsv = np.array([0, 35, 0])
+lower_hsv = np.array([0, 100, 0])
 upper_hsv = np.array([25, 255, 255])
 
 
