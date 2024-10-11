@@ -26,15 +26,15 @@ def get_steer_matrix_left_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
     
     
  
-    Ax, Ay = (120, 480)
-    Bx, By = (300, 130)#100 --50th place
+    Ax, Ay = (110, 480)
+    Bx, By = (350, 130)#100 --50th place
     k = (By - Ay) / (Bx - Ax)
     b = By - k * Bx
     first_line = k * x + b
     #TODO уменьши 185 до 175 и пробовать рисовать обычный треугольник 
     #TODO сдвинуть ближе к центру
-    Ax, Ay = (270, 480)
-    Bx, By = (300, 130)#100 --50th place
+    Ax, Ay = (260, 480)
+    Bx, By = (350, 130)#100 --50th place
     k = (By - Ay) / (Bx - Ax)
     b = By - k * Bx
     second_line = k * x + b    
