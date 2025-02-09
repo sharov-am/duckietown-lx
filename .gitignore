@@ -18,3 +18,6 @@ catkin_ws/.catkin_tools/
 *-filtered*
 .pytest_cache
 .idea
+braitenberg/interesting_solutions/
+modcon_drawings/
+visual-lane-servoing/attempts/attempt1/attempts_1.txt
