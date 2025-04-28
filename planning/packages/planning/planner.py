@@ -338,7 +338,7 @@ class rtt:
         
         x1, y1 = new_point.x, new_point.y
         x2, y2 = nearest_node.x, nearest_node.y
-        """
+        
         theta_deg = angle_between_points(x1, y1, x2, y2)
         
         temp_robot_body_pos1 = PlacedPrimitive( FriendlyPose( x1, y1, theta_deg ), self.robot_body[0].primitive)
@@ -350,12 +350,12 @@ class rtt:
         
         corners_pos1_lst: List[Tuple[float, float]]  = primitive_rectangle_pos1.get_corners()   
         corners_pos2_lst: List[Tuple[float, float]]  = primitive_rectangle_pos2.get_corners()   
-        """
-        for corner_i in range(0,1):
+        
+        for corner_i in range(0,4):
 
           
-          corner_i1_x, corner_i1_y = x1, y1 #corners_pos1_lst[corner_i]          
-          corner_i2_x, corner_i2_y = x2, y2 #corners_pos2_lst[corner_i]            
+          corner_i1_x, corner_i1_y = corners_pos1_lst[corner_i]#x1, y1 
+          corner_i2_x, corner_i2_y = corners_pos2_lst[corner_i]#x2, y2 
           logger.info(f"req num {self.query_num}: corner pos1 {corner_i} x,y = {corner_i1_x},{corner_i1_y}")
           logger.info(f"req num {self.query_num}: corner pos2 {corner_i} x,y = {corner_i2_x},{corner_i2_y} ")
 
